@@ -77,8 +77,8 @@ WSGI_APPLICATION = 'student_management_system.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'student_management_system',
-        'USER': 'student_management_system',
+        'NAME': 'student_management_system1',
+        'USER': 'student_management_system1',
         'PASSWORD': 'student_management_password',
         'HOST': 'localhost',
         'PORT': '3306'
@@ -123,4 +123,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR, 'media'
 AUTH_USER_MODEL = "student_management_app.CustomUser"
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR, 'media'
