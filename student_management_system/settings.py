@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -125,3 +126,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 AUTH_USER_MODEL = "student_management_app.CustomUser"
 MEDIA_URL = '/media/'
+
+AUTHENTICATION_BACKENDS = ['student_management_app.EmailBackEnd.EmailBackEnd']
