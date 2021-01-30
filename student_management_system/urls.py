@@ -17,10 +17,12 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
-from student_management_app.views import home
+from student_management_app.views import home, login, dologin
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home, name='home'),
+    path('home', home, name='home'),
+    path('', login, name='login'),
+    path('dologin', dologin, name='dologin'),
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
