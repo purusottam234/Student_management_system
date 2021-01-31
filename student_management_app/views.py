@@ -2,6 +2,7 @@ from django.http.response import HttpResponseRedirect
 from django.shortcuts import render, HttpResponse
 from django.contrib.auth import authenticate, login as dj_login, logout
 from student_management_app.EmailBackEnd import EmailBackEnd
+from django.contrib import messages
 
 
 # Create your views here.
@@ -25,7 +26,8 @@ def dologin(request):
             dj_login(request, user)
             return HttpResponse("Email:"+request.POST.get("email")+"password:"+request.POST.get("password"))
         else:
-            return HttpResponse('invalid login')
+            messages.error(request, "invalid login details")
+            return HttpResponseRedirect('/')
 
 
 def GetUserDetails(request):
